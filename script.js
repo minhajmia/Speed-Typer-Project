@@ -35,6 +35,7 @@ const typeController = (e) => {
 
   // if it is not a valid character like Control/Alt then skip displaying anything
   if (!validLetters.includes(newLetter)) {
+    errorCount++;
     return;
   }
 
@@ -71,7 +72,7 @@ const gameOver = () => {
   // the current time is the finish time
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
-  const timeTaken = (finishTime - startTime) / 1000;
+  const timeTaken = ((finishTime - startTime) / 1000).toFixed(0);
 
   // show result modal
   resultModal.innerHTML = "";
